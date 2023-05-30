@@ -1,0 +1,55 @@
+---
+- name: Install and configure MariaDB
+  hosts: testServer
+  remote_user: ec2-user
+  become: yes
+
+  vars:
+    mysql_port: 3306
+
+  tasks:
+    - name: Install MariaDB
+      yum: name=mariadb-server state=latest
+
+    - name: create mysql configuration file
+      template: src=my.cnf.j2 dest=/etc/my.cnf
+      notify: restart mariadb
+
+    - name: create mariadb log file
+      file: path=/var/log/mysqld.log state=touch owner=mysql mode=0775
+
+    - name: start mariadb service
+      service: name=mariadb state=started enabled=yes
+
+  handlers:
+    - name: restart mariadb
+      service: name=mariadb state=started
+
+    # - name: Secure MariaDB installation
+    #   mysql_secure_installation:
+    #     login_user: root
+    #     login_password: your_root_password_here
+    #     validate_certs: no
+    #     change_password: no
+    #     remove_anonymous_users: yes
+    #     disallow_root_login_remote: yes
+    #     remove_test_database: yes
+
+    # - name: Create a new MariaDB user and database
+    #   mysql_db:
+    #     login_user: root
+    #     login_password: your_root_password_here
+    #     name: your_database_name_here
+    #     state: present
+    #     collation: utf8_general_ci
+    #     encoding: utf8
+
+    # - name: Create a new MariaDB user
+    #   mysql_user:
+    #     login_user: root
+    #     login_password: your_root_password_here
+    #     name: your_username_here
+    #     password: your_password_here
+    #     priv: "your_database_name_here.*:ALL"
+    #     host: localhost
+    #     state: present
