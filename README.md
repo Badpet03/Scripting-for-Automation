@@ -83,5 +83,38 @@ User Stories
 
 Mockups
 The following mockups provide a visual representation of the expected design and layout of Scripting for Automation.
+-----------------------------------------------------
+|                 Sample Web Page                     |
+-----------------------------------------------------
+|                                                     |
+|                                                     |
+|                  Header Section                     |
+|                                                     |
+|                                                     |
+|-----------------------------------------------------|
+|                                                     |
+|                                                     |
+|                 Main Content Section                 |
+|                                                     |
+|                                                     |
+|-----------------------------------------------------|
+|                                                     |
+|                  Footer Section                     |
+|                                                     |
+-----------------------------------------------------
+
+
+Clone this repository: git	clone https://github.com/Badpet03/Scripting-for-Automation.git
+Navigate to the project directory: cd 
+Scripting-for-Automation
+Install dependencies: npm install
+Start the development server: npm start
+Access the website in your browser at http://localhost:3000
+Contributing
+Contributions to Scripting for Automation are welcome! If you have ideas for new features, bug fixes, or general improvements, please open an issue or submit a pull request. Make sure to follow the established coding conventions and guidelines.
+License This Scripting for Automation project is licensed under the MIT License. Feel free to use, modify, and distribute the code as permitted by the license.
+Author: Nzemeka Akponor vakponor@gmail.com/Github/Badpet03
+Appreciation: Meshach Ogboin Meshtech1research@gamil.com/Github/Meshtech1
+
 
 
